@@ -23,16 +23,16 @@ if(method=="trapezoidal"):
     for i in range(n):
         avg=(f(start+width*i)+f(end-width*i))/2 #average between endpoints
         Area+=avg*width                       #trapezoidal riemann sum
-if(method=="simpsons rule"):
-    if(n%2==1):
+if(method=="simpsons rule"):    #if specifies simpsons rule
+    if(n%2==1):                 #simpsons rule requires even number of intervals
         raise ValueError('Simpsons Rule requires an even number of intervals.') #throw an error
-    midpt=0
+    midpt=0     
     trap=0
-    for i in range(n):                                  #finds trapezoidal sum
-        avg=(f(start+width*i)+f(end-width*i))/2 
-        trap+=avg*width
-    for i in range(n):                                  #finds midpoint sum
-        midpt+=f(start+(width/2)+width*i)*width
+    for i in range(n):      #loops for number of intervals                            
+        avg=(f(start+width*i)+f(end-width*i))/2     #uses trapezoidal sum algorithm
+        trap+=avg*width         #finds trapezoidal sum
+    for i in range(n):           #loops for number of intervals                
+        midpt+=f(start+(width/2)+width*i)*width   #finds midpoint sum
     Area=((2*midpt)+trap)/3                             #weighted average
         
 print(Area) #output
