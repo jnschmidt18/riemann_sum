@@ -19,8 +19,8 @@ if(method=="right"):        #if specified right endpoint method
 if(method=="midpoint"):     #if specified midpoint method
     for i in range(n):      #loop for number of intervals
         Area+=f(start+(width/2)+width*i)*width  #midpoint riemann sum
-if(method=="trapezoidal"):
-    for i in range(n):
+if(method=="trapezoidal"):          #if selected method trpaezoidal
+    for i in range(n):          #loop for number of intervals
         avg=(f(start+width*i)+f(end-width*i))/2 #average between endpoints
         Area+=avg*width                       #trapezoidal riemann sum
 if(method=="simpsons rule"):    #if specifies simpsons rule
