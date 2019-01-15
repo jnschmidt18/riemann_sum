@@ -37,4 +37,3 @@ if(method=="simpsons rule"):
         Area=((2*midpt)+trap)/3                             #weighted average
         
 print(Area) #output
-
