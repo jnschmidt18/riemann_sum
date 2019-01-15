@@ -5,6 +5,8 @@ def f(x):
 start=int(input("start point: "))   #input start of bounds
 end=int(input("end point: "))       #input end of bounds
 n=int(input("intervals: "))         #input number of intervals
+if(n<1):                            #n cannot be 0 or negative
+    raise ValueError('intervals cannot be zero or negative.') #throw an error
 method=str(input("left, right, midpoint, trapezoidal, or simpsons rule: "))  #input method of riemann sum
 width=(end-start)/n       #calculate with of intervals
 Area=0                  #Area to be output later
