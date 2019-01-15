@@ -1,4 +1,4 @@
-#Riemann Sum Calculator, Josiah Schmidt, Last Edited 1/14/2019
+ #Riemann Sum Calculator, Josiah Schmidt, Last Edited 1/14/2019
 def f(x):
     return(x**2)    #returns the predefined function (x squared, in this case)
 
@@ -13,8 +13,8 @@ Area=0                  #Area to be output later
 if(method=="left"):         #if specified left endpoint method
     for i in range(n):      #loop for number of intervals
         Area+=f(start+width*i)*width #left riemann sum
-if(method=="right"):
-    for i in range(n):
+if(method=="right"):        #if specified right endpoint method
+    for i in range(n):      #loop for number of intervals
         Area+=f(end-width*i)*width #right riemann sum
 if(method=="midpoint"):
     for i in range(n):
