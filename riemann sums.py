@@ -10,8 +10,8 @@ if(n<1):                            #n cannot be 0 or negative
 method=str(input("left, right, midpoint, trapezoidal, or simpsons rule: "))  #input method of riemann sum
 width=(end-start)/n       #calculate with of intervals
 Area=0                  #Area to be output later
-if(method=="left"):
-    for i in range(n):
+if(method=="left"):         #if specified left endpoint method
+    for i in range(n):      #loop for number of intervals
         Area+=f(start+width*i)*width #left riemann sum
 if(method=="right"):
     for i in range(n):
