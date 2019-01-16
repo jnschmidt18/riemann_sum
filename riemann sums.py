@@ -1,4 +1,5 @@
 #Riemann Sum Calculator, Josiah Schmidt, Last Edited 1/16/2019
+#If you downloaded this program off GitHub, please read the readme for instructions.
 import math     #import more advanced math functions
 def f(x):                   
     return(math.sin(x**2))    #returns the predefined function (sine of x squared, in this case)
