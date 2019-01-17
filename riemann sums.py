@@ -2,7 +2,7 @@
 #If you downloaded this program off GitHub, please read the readme for instructions.
 import math     #import more advanced math functions
 def f(x):                   
-    return((x**2))    #returns the predefined function (sine of x squared, in this case)
+    return(math.sin(x**2))    #returns the predefined function (sine of x squared, in this case)
 
 def rsum():
     start=int(input("start point: "))   #input start of bounds
