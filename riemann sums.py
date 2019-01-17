@@ -10,7 +10,7 @@ def rsum():
     n=int(input("intervals: "))         #input number of intervals
     if(n<1):                            #n cannot be 0 or negative
         raise ValueError('intervals cannot be zero or negative.') #throw an error
-    method=str(input("left, right, midpoint, trapezoidal, or simpsons rule: "))  #input method of riemann sum
+    method=str(input("left, right, midpoint, trapezoidal, weighted average, or simpsons rule: "))  #input method of riemann sum
     width=(end-start)/n       #calculate with of intervals
     Area=0                  #Area to be output later
     if(method=="left"):         #if specified left endpoint method
@@ -31,6 +31,17 @@ def rsum():
             raise ValueError('Simpsons Rule requires an even number of intervals.') #throw an error
         midpt=0     
         trap=0
+        n=n//2      #adjustment for rule
+        width*=2    #double width for halved n
+        for i in range(n):      #loops for number of intervals                            
+            avg=(f(start+width*i)+f(end-width*i))/2     #uses trapezoidal sum algorithm
+            trap+=avg*width         #finds trapezoidal sum
+        for i in range(n):           #loops for number of intervals                
+            midpt+=f(start+(width/2)+width*i)*width   #finds midpoint sum
+        Area=((2*midpt)+trap)/3                             #weighted average
+    elif(method=="weighted average"):
+        midpt=0     
+        trap=0   
         for i in range(n):      #loops for number of intervals                            
             avg=(f(start+width*i)+f(end-width*i))/2     #uses trapezoidal sum algorithm
             trap+=avg*width         #finds trapezoidal sum
